@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderComponent implements OnInit {
 
+  title:string = "Bienvenue sur la page commande";
+
   constructor() { }
 
   ngOnInit(): void {

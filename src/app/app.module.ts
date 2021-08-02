@@ -8,7 +8,12 @@ import { StockComponent } from './stock/stock.component';
 import { OrderComponent } from './order/order.component';
 import { CardComponent } from './card/card.component';
 import { CardTwoComponent } from './card-two/card-two.component';
-
+import { CardThreeComponent } from './card-three/card-three.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { FourOhfourComponent } from './four-ohfour/four-ohfour.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { ProductComponent } from './product/product.component';
+import { ClientComponent } from './client/client.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +21,13 @@ import { CardTwoComponent } from './card-two/card-two.component';
     StockComponent,
     OrderComponent,
     CardComponent,
-    CardTwoComponent
+    CardTwoComponent,
+    CardThreeComponent,
+    SidebarComponent,
+    FourOhfourComponent,
+    HomePageComponent,
+    ProductComponent,
+    ClientComponent
   ],
   imports: [
     BrowserModule,

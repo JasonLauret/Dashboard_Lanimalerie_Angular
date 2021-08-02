@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StockComponent implements OnInit {
 
+  title:string = "Bienvenue sur la page des stocks";
+
   constructor() { }
 
   ngOnInit(): void {
