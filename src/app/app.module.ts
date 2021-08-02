@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { StockComponent } from './stock/stock.component';
 import { OrderComponent } from './order/order.component';
-import { OrderClientComponent } from './order-client/order-client.component';
-import { NumberNewClientsComponent } from './number-new-clients/number-new-clients.component';
+import { CardComponent } from './card/card.component';
+import { CardTwoComponent } from './card-two/card-two.component';
 
 @NgModule({
   declarations: [
@@ -15,8 +15,8 @@ import { NumberNewClientsComponent } from './number-new-clients/number-new-clien
     HeaderComponent,
     StockComponent,
     OrderComponent,
-    OrderClientComponent,
-    NumberNewClientsComponent
+    CardComponent,
+    CardTwoComponent
   ],
   imports: [
     BrowserModule,
