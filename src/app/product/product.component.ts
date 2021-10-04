@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class ProductComponent implements OnInit {
 
   title:string = "Bienvenue sur la page produit";
-
-  constructor() { }
+  totalProductsSold:any;
+  constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
+    this.http.get<any>('http://127.0.0.1:8000/api​/order_products').subscribe(data =>{this.totalProductsSold = data['hydra:member']});
   }
 
 }
