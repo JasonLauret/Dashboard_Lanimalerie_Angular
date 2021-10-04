@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { StockComponent } from './stock/stock.component';
@@ -14,6 +16,9 @@ import { FourOhfourComponent } from './four-ohfour/four-ohfour.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ProductComponent } from './product/product.component';
 import { ClientComponent } from './client/client.component';
+import { DataFromApiComponent } from './data-from-api/data-from-api.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,11 +32,13 @@ import { ClientComponent } from './client/client.component';
     FourOhfourComponent,
     HomePageComponent,
     ProductComponent,
-    ClientComponent
+    ClientComponent,
+    DataFromApiComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
