@@ -15,8 +15,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FourOhfourComponent } from './four-ohfour/four-ohfour.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ProductComponent } from './product/product.component';
-import { ClientComponent } from './client/client.component';
 import { DataFromApiComponent } from './data-from-api/data-from-api.component';
+import { UserComponent } from './user/user.component';
 
 
 @NgModule({
@@ -32,8 +32,8 @@ import { DataFromApiComponent } from './data-from-api/data-from-api.component';
     FourOhfourComponent,
     HomePageComponent,
     ProductComponent,
-    ClientComponent,
-    DataFromApiComponent
+    DataFromApiComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

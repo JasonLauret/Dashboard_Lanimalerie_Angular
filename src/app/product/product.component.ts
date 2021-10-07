@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ConnexionApiService } from '../services/connexion-api.service';
 
 @Component({
   selector: 'app-product',
@@ -10,10 +10,20 @@ export class ProductComponent implements OnInit {
 
   title:string = "Bienvenue sur la page produit";
   totalProductsSold:any;
-  constructor(private http:HttpClient) { }
+  responses:any;
+  constructor(private connexionApi:ConnexionApiService) { }
 
   ngOnInit(): void {
-    this.http.get<any>('http://127.0.0.1:8000/api​/order_products').subscribe(data =>{this.totalProductsSold = data['hydra:member']});
+    this.connexionApi.getProduct().subscribe(data =>{this.totalProductsSold = data['hydra:member']});
+    this.connexionApi.getOrderProduct().subscribe(data =>{this.responses = data['hydra:member']});
   }
 
+  occurrences:any = { };
+  i:any;
+  count(){
+    let j = this.responses.length;
+    for (this.i = 0; this.i < j; this.i++) {
+      this.occurrences[this.responses[this.i]] = (this.occurrences[this.responses[this.i]] || 0) + 1;
+    }
+  }
 }

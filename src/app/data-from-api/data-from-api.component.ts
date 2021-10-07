@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Component, OnInit } from '@angular/core';
+import { ConnexionApiService } from '../services/connexion-api.service';
 
 @Component({
   selector: 'app-data-from-api',
@@ -8,11 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataFromApiComponent implements OnInit {
 
-  response:any;
-  constructor(private http:HttpClient) { }
+  constructor() { }
   
-
   ngOnInit(): void {
-    this.http.get<any>('http://127.0.0.1:8000/api/order_products').subscribe(data =>{this.response = data['hydra:member']});
   }
 } 

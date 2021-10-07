@@ -1,0 +1,10 @@
+<h2 class="p-4 bg-warning mt-2 mb-5 rounded shadow">{{ title }}</h2>
+
+<div class="col p-3 shadow rounded">
+    <p>{{  users | json}}</p>
+</div>
+
+<ul>
+    <p>Tous les utilisateur:</p>
+    <li *ngFor="let user of users">{{ user.firstName }} ({{ user.email }})</li>
+</ul>
