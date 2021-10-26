@@ -18,6 +18,7 @@ import { ProductComponent } from './product/product.component';
 import { DataFromApiComponent } from './data-from-api/data-from-api.component';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

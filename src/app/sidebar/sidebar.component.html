@@ -1,5 +1,4 @@
-
-<nav class="sidebar-sticky pt-3 bg-secondary">
+<nav *ngIf="authService.isloggedIn" class="sidebar-sticky pt-3 bg-secondary">
   <ul class="nav flex-column">
     <li class="nav-item">
       <a class="nav-link" routerLink="api">

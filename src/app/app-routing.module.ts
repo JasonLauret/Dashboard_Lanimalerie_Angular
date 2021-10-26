@@ -11,7 +11,7 @@ import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
-  { path: "accueil", component: HomePageComponent },
+  { path: "home", component: HomePageComponent },
   { path: "api", component: DataFromApiComponent },
   { path: "order", component: OrderComponent },
   { path: "product", component: ProductComponent },
