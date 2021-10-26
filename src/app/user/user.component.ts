@@ -13,7 +13,7 @@ export class UserComponent implements OnInit {
   constructor(private connexionApi: ConnexionApiService) { }
 
   ngOnInit(): void {
-    this.connexionApi.getUser().subscribe(data => {this.users = data['hydra:member']});
+    this.connexionApi.getUsers().subscribe(data => {this.users = data['hydra:member']});
   }
 
   // a = [5, 5, 5, 2, 2, 2, 2, 2, 9, 4]; 

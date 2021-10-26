@@ -2,7 +2,9 @@
 
 <ul class="border">
     <p class="border">Occurrence des produits vendu:</p>
-    <li *ngFor="let response of responses">{{ response.product }}</li>
+    <li *ngFor="let response of responses">{{ response.product.name }}</li>
 </ul>
 
-{{ occurrences | json}}
+<!-- {{ occurrences | json}} -->
+
+{{ countOccurences() | json}}

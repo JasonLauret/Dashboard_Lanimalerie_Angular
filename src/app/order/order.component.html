@@ -2,6 +2,17 @@
 
 <div class="col p-3 shadow rounded">
     <p>Nombre de commande:</p>
-    <p>{{ numberOfOrders.length | json }}</p>
+    <p>{{ numberOfOrders.length }}</p>
 </div>
 
+<div class="col p-3 shadow rounded">
+    <p>Montant total des ventes:</p>
+    <p>{{ countTotalSales() }}</p>
+</div>
+
+<div class="col p-3 shadow rounded">
+    <p>Nombre total des ventes</p>
+    <li *ngFor="let totalSale of totalSales">{{ totalSale.total }} / {{ numberOfOrders.length }}</li>
+</div>
+
+<p>{{ countTotalSalesMoyen() | json}}</p>

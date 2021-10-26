@@ -13,7 +13,7 @@ export class ConnexionApiService {
     return this.httpClient.get<any>('http://127.0.0.1:8000/api/orders');
   }
 
-  getUser(): Observable<any> {
+  getUsers(): Observable<any> {
     return this.httpClient.get<any>('http://127.0.0.1:8000/api/users');
   }
 
@@ -24,5 +24,4 @@ export class ConnexionApiService {
   getOrderProduct(): Observable<any> {
     return this.httpClient.get<any>('http://127.0.0.1:8000/api/order_products');
   }
-  
 }

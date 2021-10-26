@@ -17,6 +17,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ProductComponent } from './product/product.component';
 import { DataFromApiComponent } from './data-from-api/data-from-api.component';
 import { UserComponent } from './user/user.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { UserComponent } from './user/user.component';
     HomePageComponent,
     ProductComponent,
     DataFromApiComponent,
-    UserComponent
+    UserComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
