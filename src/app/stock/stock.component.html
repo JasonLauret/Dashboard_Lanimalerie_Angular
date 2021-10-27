@@ -1,20 +1,9 @@
-<div *ngIf="authService.isloggedIn; else elseBlock">
-    
-    
-    <h2 class="p-4 bg-warning mt-2 mb-5 rounded shadow">{{ title }}</h2>
+<h2 class="p-4 bg-warning mt-2 mb-5 rounded shadow">{{ title }}</h2>
 
-    <div class="d-flex justify-content-around">
-        <app-card></app-card>
-        <app-card></app-card>
-    </div>
-    <div class="d-flex justify-content-around">
-        <app-card-two></app-card-two>
-    </div>
-
-
+<div class="d-flex justify-content-around">
+    <app-card></app-card>
+    <app-card></app-card>
 </div>
-<ng-template #elseBlock>
-    <div class="alert alert-danger">
-        <strong>Vous n'êtes pas autorisé... Vous devez être connecté pour accéder à cette page.</strong>
-    </div>
-</ng-template>
+<div class="d-flex justify-content-around">
+    <app-card-two></app-card-two>
+</div>

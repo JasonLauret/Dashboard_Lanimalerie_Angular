@@ -1,4 +1,4 @@
-<div class="jumbotron my-5 text-center shadow rounded" *ngIf="authService.isloggedIn; else elseBlock">
+<div class="jumbotron my-5 text-center shadow rounded">
     <h1 class="display-3 text-warning">Bienvenue sur le dashbord</h1>
     <p class="lead">Dans se Dashbord pour pourrez observer les statistiques du site La Nîme'alerie.</p>
     <hr class="my-4">
@@ -7,8 +7,3 @@
       <a class="btn btn-warning btn-lg" routerLink="order" role="button">Commencer</a>
     </p>
 </div>
-<ng-template #elseBlock>
-  <div class="alert alert-danger">
-      <strong>Vous n'êtes pas autorisé... Vous devez être connecté pour accéder à cette page.</strong>
-  </div>
-</ng-template>

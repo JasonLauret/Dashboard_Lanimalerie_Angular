@@ -19,6 +19,7 @@ import { DataFromApiComponent } from './data-from-api/data-from-api.component';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { FormsModule } from '@angular/forms';
     ProductComponent,
     DataFromApiComponent,
     UserComponent,
-    LoginComponent
+    LoginComponent,
+    ForbiddenComponent
   ],
   imports: [
     BrowserModule,

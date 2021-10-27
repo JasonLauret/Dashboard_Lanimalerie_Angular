@@ -1,25 +1,18 @@
-<div *ngIf="authService.isloggedIn; else elseBlock">
-    <h2 class="p-4 bg-warning mt-2 mb-5 rounded shadow">{{ title }}</h2>
+<h2 class="p-4 bg-warning mt-2 mb-5 rounded shadow">{{ title }}</h2>
 
-    <div class="col p-3 shadow rounded">
-        <p>Nombre de commande:</p>
-        <p>{{ numberOfOrders.length }}</p>
-    </div>
-
-    <div class="col p-3 shadow rounded">
-        <p>Montant total des ventes:</p>
-        <p>{{ countTotalSales() }}</p>
-    </div>
-
-    <div class="col p-3 shadow rounded">
-        <p>Nombre total des ventes</p>
-        <li *ngFor="let totalSale of totalSales">{{ totalSale.total }} / {{ numberOfOrders.length }}</li>
-    </div>
-
-    <p>{{ countTotalSalesMoyen() | json}}</p>
+<div class="col p-3 shadow rounded">
+    <p>Nombre de commande:</p>
+    <p>{{ numberOfOrders.length }}</p>
 </div>
-<ng-template #elseBlock>
-    <div class="alert alert-danger">
-        <strong>Vous n'êtes pas autorisé... Vous devez être connecté pour accéder à cette page.</strong>
-    </div>
-</ng-template>
+
+<div class="col p-3 shadow rounded">
+    <p>Montant total des ventes:</p>
+    <p>{{ countTotalSales() }}</p>
+</div>
+
+<div class="col p-3 shadow rounded">
+    <p>Nombre total des ventes</p>
+    <li *ngFor="let totalSale of totalSales">{{ totalSale.total }} / {{ numberOfOrders.length }}</li>
+</div>
+
+<p>{{ countTotalSalesMoyen() | json}}</p>

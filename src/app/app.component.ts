@@ -10,20 +10,19 @@ import { AuthService } from './services/auth.service';
 export class AppComponent {
   title = 'dashboard';
 
-  constructor(private authService:AuthService/*, private router:Router*/) { }
+  constructor(private authService:AuthService, private router:Router) { }
 
-  // ngOnInit(){
-  //   let isloggedin:any;
-  //   let loggedUser:any;
+  ngOnInit(){
+    let isloggedin:any;
+    let loggedUser:any;
 
-  //   isloggedin = localStorage.getItem('isloggedIn');
-  //   loggedUser = localStorage.getItem('loggedUser');
+    isloggedin = localStorage.getItem('isloggedIn');
+    loggedUser = localStorage.getItem('loggedUser');
 
-  //   if (isloggedin != "true" || !loggedUser){
-  //     this.router.navigate(['login']);
-  //   }else{
-  //     this.authService.setLoggedUserFromLocalStorage(loggedUser);
-  //   }
-
-  // }
+    if (isloggedin != "true" || !loggedUser){
+      this.router.navigate(['forbidden']);
+    }else{
+      this.authService.setLoggedUserFromLocalStorage(loggedUser);
+    }
+  }
 }
