@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 import { ConnexionApiService } from '../services/connexion-api.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class ProductComponent implements OnInit {
   title:string = "Bienvenue sur la page produit";
   totalProductsSold:any;
   responses:any;
-  constructor(private connexionApi:ConnexionApiService) { }
+  constructor(private connexionApi:ConnexionApiService, public authService:AuthService) { }
 
   ngOnInit(): void {
     this.connexionApi.getProduct().subscribe(data =>{this.totalProductsSold = data['hydra:member']});

@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 import { ConnexionApiService } from '../services/connexion-api.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ConnexionApiService } from '../services/connexion-api.service';
 })
 export class DataFromApiComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authService:AuthService) { }
   
   ngOnInit(): void {
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-stock',
@@ -9,7 +10,7 @@ export class StockComponent implements OnInit {
 
   title:string = "Bienvenue sur la page des stocks";
 
-  constructor() { }
+  constructor(public authService:AuthService) { }
 
   ngOnInit(): void {
   }

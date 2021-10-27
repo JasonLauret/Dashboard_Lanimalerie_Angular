@@ -1,3 +1,14 @@
-<div class="col p-3 shadow rounded">
-    <p>Retour de l'api:</p>
+<div *ngIf="authService.isloggedIn; else elseBlock">
+
+
+    <div class="col p-3 shadow rounded">
+        <p>Retour de l'api:</p>
+    </div>
+
+
 </div>
+<ng-template #elseBlock>
+    <div class="alert alert-danger">
+        <strong>Vous n'êtes pas autorisé... Vous devez être connecté pour accéder à cette page.</strong>
+    </div>
+</ng-template>

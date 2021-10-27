@@ -16,7 +16,7 @@ export class AuthService {
   
   public loggedUser:any;
   public isloggedIn: Boolean = false;
-  // public roles:string[];
+  //public roles:string[];
 
 //   apiURL: string = "http://127.0.0.1:8000/api/user_dashboards"
 
@@ -49,20 +49,20 @@ export class AuthService {
   //   localStorage.setItem('isLoggedIn', String(this.isloggedIn));
   // }
 
-  // // isAdmin():Boolean{
-  // //   let admin: Boolean = false;
-  // //   if(!this.roles){
-  // //     return false;
-  // //   }else{
-  // //     this.roles.forEach((curRole) => {
-  // //       if(curRole.role == 'ADMIN'){
-  // //         admin = true;
-  // //       }
-  // //     });
-  // //   }
+  // isAdmin():Boolean{
+  //   let admin: Boolean = false;
+  //   if(!this.roles){
+  //     return false;
+  //   }else{
+  //     this.roles.forEach((curRole) => {
+  //       if(curRole.role == 'ADMIN'){
+  //         admin = true;
+  //       }
+  //     });
+  //   }
     
-  // //   return admin;
-  // // }
+  //   return admin;
+  // }
 
   logout(){
     this.isloggedIn = false;

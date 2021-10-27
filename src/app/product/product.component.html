@@ -1,10 +1,20 @@
-<h2 class="p-4 bg-warning mt-2 mb-5 rounded shadow">{{ title }}</h2>
+<div *ngIf="authService.isloggedIn; else elseBlock">
 
-<ul class="border">
-    <p class="border">Occurrence des produits vendu:</p>
-    <li *ngFor="let response of responses">{{ response.product.name }}</li>
-</ul>
 
-<!-- {{ occurrences | json}} -->
+    <h2 class="p-4 bg-warning mt-2 mb-5 rounded shadow">{{ title }}</h2>
+    <ul class="border">
+        <p class="border">Occurrence des produits vendu:</p>
+        <li *ngFor="let response of responses">{{ response.product.name }}</li>
+    </ul>
 
-{{ countOccurences() | json}}
+    <!-- {{ occurrences | json}} -->
+
+    {{ countOccurences() | json}}
+
+    
+</div>
+<ng-template #elseBlock>
+    <div class="alert alert-danger">
+        <strong>Vous n'êtes pas autorisé... Vous devez être connecté pour accéder à cette page.</strong>
+    </div>
+</ng-template>

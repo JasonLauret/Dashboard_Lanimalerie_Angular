@@ -1,10 +1,19 @@
-<h2 class="p-4 bg-warning mt-2 mb-5 rounded shadow">{{ title }}</h2>
+<div *ngIf="authService.isloggedIn; else elseBlock">
+    
+    <h2 class="p-4 bg-warning mt-2 mb-5 rounded shadow">{{ title }}</h2>
 
-<div class="col p-3 shadow rounded">
-    <p>{{  users | json}}</p>
+    <div class="col p-3 shadow rounded">
+        <p>{{  users | json}}</p>
+    </div>
+
+    <ul>
+        <p>Tous les utilisateur:</p>
+        <li *ngFor="let user of users">{{ user.firstName }} ({{ user.email }})</li>
+    </ul>
+
 </div>
-
-<ul>
-    <p>Tous les utilisateur:</p>
-    <li *ngFor="let user of users">{{ user.firstName }} ({{ user.email }})</li>
-</ul>
+<ng-template #elseBlock>
+    <div class="alert alert-danger">
+        <strong>Vous n'êtes pas autorisé... Vous devez être connecté pour accéder à cette page.</strong>
+    </div>
+</ng-template>

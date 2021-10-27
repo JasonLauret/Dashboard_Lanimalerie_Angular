@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 import { ConnexionApiService } from '../services/connexion-api.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class OrderComponent implements OnInit {
   totalSales:any;
 
 
-  constructor(private connexionApi:ConnexionApiService) { }
+  constructor(private connexionApi:ConnexionApiService, public authService:AuthService) { }
 
   ngOnInit(): void {
     this.connexionApi.getOrders().subscribe(data =>{this.numberOfOrders = data['hydra:member']});
