@@ -73,9 +73,4 @@ export class AuthService {
     this.router.navigate(['/']);
   }
 
-  setLoggedUserFromLocalStorage(login:string){
-    this.loggedUser = login;
-    this.isloggedIn = true;
-  }
-
 }

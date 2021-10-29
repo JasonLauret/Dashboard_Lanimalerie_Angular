@@ -18,12 +18,11 @@ export class OrderGuard implements CanActivate {
       isloggedin = localStorage.getItem('isloggedIn');
       loggedUser = localStorage.getItem('loggedUser');
 
-      if(isloggedin == "true" || !loggedUser){
+      if(isloggedin == "true" && loggedUser){
         return true;
       }else {
         this.router.navigate(['forbidden']);
         return false;
       }
   }
-  
 }

@@ -5,8 +5,8 @@
         <div class="d-flex justify-content-between">
             <li><a class="navUser-link">{{ authService.loggedUser }}</a></li>
             <div>
-                <li><a *ngIf="!authService.isloggedIn" routerLink="/">Connexion</a></li>
-                <li><a *ngIf="authService.isloggedIn" (click)="onLogout()">Deconnexion</a></li>
+                <li><a class="btn-header" *ngIf="!authService.isloggedIn" routerLink="/">Connexion</a></li>
+                <li><a class="btn-header" *ngIf="authService.isloggedIn" (click)="onLogout()">Deconnexion</a></li>
             </div>
         </div>
     </div>

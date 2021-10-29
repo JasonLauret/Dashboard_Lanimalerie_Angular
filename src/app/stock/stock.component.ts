@@ -10,7 +10,7 @@ export class StockComponent implements OnInit {
 
   title:string = "Bienvenue sur la page des stocks";
 
-  constructor(public authService:AuthService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

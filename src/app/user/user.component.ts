@@ -11,7 +11,7 @@ export class UserComponent implements OnInit {
   title:string = "Bienvenue sur la page des utilisateurs";
   users:any;
 
-  constructor(private connexionApi: ConnexionApiService, public authService:AuthService) { }
+  constructor(private connexionApi: ConnexionApiService) { }
 
   ngOnInit(): void {
     this.connexionApi.getUsers().subscribe(data => {this.users = data['hydra:member']});

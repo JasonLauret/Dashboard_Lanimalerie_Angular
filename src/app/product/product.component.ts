@@ -12,7 +12,7 @@ export class ProductComponent implements OnInit {
   title:string = "Bienvenue sur la page produit";
   totalProductsSold:any;
   responses:any;
-  constructor(private connexionApi:ConnexionApiService, public authService:AuthService) { }
+  constructor(private connexionApi:ConnexionApiService) { }
 
   ngOnInit(): void {
     this.connexionApi.getProduct().subscribe(data =>{this.totalProductsSold = data['hydra:member']});

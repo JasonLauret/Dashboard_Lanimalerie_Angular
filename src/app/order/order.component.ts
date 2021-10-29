@@ -14,7 +14,7 @@ export class OrderComponent implements OnInit {
   totalSales:any;
 
 
-  constructor(private connexionApi:ConnexionApiService, public authService:AuthService) { }
+  constructor(private connexionApi:ConnexionApiService) { }
 
   ngOnInit(): void {
     this.connexionApi.getOrders().subscribe(data =>{this.numberOfOrders = data['hydra:member']});
