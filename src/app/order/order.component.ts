@@ -35,4 +35,13 @@ export class OrderComponent implements OnInit {
     }
     return sum;
   }
+
+  /*
+  * Cette function calcul la valeur d'un panier moyen.
+  */
+  averageBasket(){
+    let total:number;
+    total = this.countTotalSales() / this.numberOfOrders.length;
+    return total;
+  }
 } 
