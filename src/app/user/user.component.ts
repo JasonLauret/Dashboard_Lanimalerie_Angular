@@ -10,11 +10,13 @@ import { ConnexionApiService } from '../services/connexion-api.service';
 export class UserComponent implements OnInit {
   title:string = "Bienvenue sur la page des utilisateurs";
   users:any;
+  userDashboards:any;
 
   constructor(private connexionApi: ConnexionApiService) { }
 
   ngOnInit(): void {
     this.connexionApi.getUsers().subscribe(data => {this.users = data['hydra:member']});
+    this.connexionApi.getUserDashboard().subscribe(data => {this.userDashboards = data['hydra:member']});
   }
 
   // a = [5, 5, 5, 2, 2, 2, 2, 2, 9, 4]; 

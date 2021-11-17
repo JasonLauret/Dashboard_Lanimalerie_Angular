@@ -1,5 +1,11 @@
 export class User{
-    username:string | undefined;
-    password: string | undefined;
-    roles:String[] | undefined
+    username!: string;
+    password!: string;
 }
+
+// export class User {
+//     constructor(
+//         public username:string,
+//         public password: string
+//     ){}
+// }

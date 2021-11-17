@@ -15,8 +15,19 @@ export class LoginComponent implements OnInit {
 
   constructor(private authService:AuthService, private router:Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit() { }
+
+  // onLoggedin(){
+  //   this.authService.getUserFromBdd(this.user.username).subscribe((usr:User) => {
+  //     console.log(usr);
+  //     if(usr.password === this.user.password){
+  //       this.authService.signIn(usr);
+  //       this.router.navigate(['/home']);
+  //     }else{
+  //       this.erreur = 1;
+  //     }
+  //   })
+  // }
 
   onLoggedin(){
     console.log(this.user);
@@ -27,16 +38,4 @@ export class LoginComponent implements OnInit {
       this.erreur = 1;
     }
   }
-
-  // onLoggedin(){
-  //   this.authService.getUserFromBdd(this.user.username).subscribe((usr:User) => {
-  //     if(usr.password == this.user.password){
-  //       this.authService.signIn(usr);
-  //       this.router.navigate(['/home']);
-  //     }else{
-  //       this.erreur = 1;
-  //     },(err) => console.log(err);
-  //   })
-  // }
-
 }

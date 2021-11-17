@@ -11,16 +11,40 @@ import { User } from '../model/user.model';
 export class AuthService {
 
   users:User[] = [
-    {"username":"jason", "password":"azerty", "roles":["ROLE_ADMIN"]}
+    {"username":"jason", "password":"azerty"}
   ]
-  
+
+  apiURL = "http://127.0.0.1:8000/api/user_dashboards?page=1";
+
   public loggedUser:any;
   public isloggedIn: Boolean = false;
-  //public roles:string[];
 
-//   apiURL: string = "http://127.0.0.1:8000/api/user_dashboards"
+  constructor(private httpClient: HttpClient, private router:Router) { }
 
-  constructor(/*private httpClient: HttpClient, */private router:Router) { }
+  getUserFromBdd(username:string):Observable<User>{
+    const url = `${this.apiURL}/${username}`;
+    return this.httpClient.get<User>(url);
+  }
+  
+  // signIn(user:User){
+  //   this.loggedUser = user.username;
+  //   this.isloggedIn = true;
+  //   localStorage.setItem('loggeUser', this.loggedUser);
+  //   localStorage.setItem('isLoggedIn', String(this.isloggedIn));
+  // }
+  
+  logout(){
+    this.isloggedIn = false;
+    this.loggedUser = undefined;
+    localStorage.removeItem('loggedUser');
+    localStorage.setItem('isloggedIn', String(this.isloggedIn));
+    this.router.navigate(['/']);
+  }
+
+  setLoggedUserFromLocalStorage(login:string){
+      this.loggedUser = login;
+      this.isloggedIn = true;
+  }
 
   SignIn(user:User):Boolean{
     let validUser:Boolean=false;
@@ -36,19 +60,7 @@ export class AuthService {
     });
     return validUser;
   }
-  // getUserFromBdd(username:string):Observable<User>{
-  //   const url = "${this.apiURL}/${username}";
-  //   return this.httpClient.get<User>(url)
-  // }
-
-  // signIn(user:User){
-  //   this.loggedUser = user.username;
-  //   this.isloggedIn = true;
-  //   // this.roles = user.roles;
-  //   localStorage.setItem('loggeUser', this.loggedUser);
-  //   localStorage.setItem('isLoggedIn', String(this.isloggedIn));
-  // }
-
+  
   // isAdmin():Boolean{
   //   let admin: Boolean = false;
   //   if(!this.roles){
@@ -63,14 +75,5 @@ export class AuthService {
     
   //   return admin;
   // }
-
-  logout(){
-    this.isloggedIn = false;
-    this.loggedUser = undefined;
-    // this.roles = undefined;
-    localStorage.removeItem('loggedUser');
-    localStorage.setItem('isloggedIn', String(this.isloggedIn));
-    this.router.navigate(['/']);
-  }
-
+  
 }

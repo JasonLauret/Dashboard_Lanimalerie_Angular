@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -6,22 +7,28 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ConnexionApiService {
+  apiUrl = environment.apiUrl; 
 
   constructor(private httpClient: HttpClient) { }
 
   getOrders(): Observable<any> {
-    return this.httpClient.get<any>('http://127.0.0.1:8000/api/orders');
-  }
-
-  getUsers(): Observable<any> {
-    return this.httpClient.get<any>('http://127.0.0.1:8000/api/users');
-  }
-
-  getProduct(): Observable<any> {
-    return this.httpClient.get<any>('http://127.0.0.1:8000/api/products');
+    return this.httpClient.get<any>( this.apiUrl + '/api/orders');
   }
 
   getOrderProduct(): Observable<any> {
-    return this.httpClient.get<any>('http://127.0.0.1:8000/api/order_products');
+    return this.httpClient.get<any>( this.apiUrl + '/api/order_products');
   }
+
+  getUsers(): Observable<any> {
+    return this.httpClient.get<any>( this.apiUrl + '/api/users');
+  }
+
+  getProduct(): Observable<any> {
+    return this.httpClient.get<any>( this.apiUrl + '/api/products');
+  }
+
+  getUserDashboard(): Observable<any> {
+    return this.httpClient.get<any>( this.apiUrl + '/api/user_dashboards');
+  }
+  
 }

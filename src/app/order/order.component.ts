@@ -10,6 +10,9 @@ import { ConnexionApiService } from '../services/connexion-api.service';
 export class OrderComponent implements OnInit {
 
   title:string = "Bienvenue sur la page commande";
+
+  connexion = this.connexionApi.getOrders();
+
   numberOfOrders:any;
   totalSales:any;
 
@@ -17,31 +20,19 @@ export class OrderComponent implements OnInit {
   constructor(private connexionApi:ConnexionApiService) { }
 
   ngOnInit(): void {
-    this.connexionApi.getOrders().subscribe(data =>{this.numberOfOrders = data['hydra:member']});
-
-    this.connexionApi.getOrders().subscribe(data =>{this.totalSales = data['hydra:member']});
-    
+    this.connexion.subscribe(data =>{this.numberOfOrders = data['hydra:member']});
+    this.connexion.subscribe(data =>{this.totalSales = data['hydra:member']});
   }
-  
+
+  /*
+  * Cette function calcul le montant total des ventes éffectué.
+  */
   countTotalSales(){
-    let i:any;
+    let i:number;
     let sum:number = 0;
     for(i = 0; i < this.totalSales.length; ++i){
       sum += this.totalSales[i].total;
     }
     return sum;
-  }
-
-  // averageBasket(){
-  //   let result = this.countTotalSales() / this.numberOfOrders.length;
-  //   return result;
-  // }
-
-  countTotalSalesMoyen(){
-    let i:any;
-    for(i = 0; i < this.totalSales.length; ++i){
-      this.totalSales[i].total;
-    }
-    return this.totalSales;
   }
 } 

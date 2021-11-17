@@ -3,7 +3,7 @@
     <div>
         <h3 class="text-warning">LaFaceCachéeDeLaLune</h3>
         <div class="d-flex justify-content-between">
-            <li><a class="navUser-link">{{ authService.loggedUser }}</a></li>
+            <li>{{ authService.loggedUser }}</li>
             <div>
                 <li><a class="btn-header" *ngIf="!authService.isloggedIn" routerLink="/">Connexion</a></li>
                 <li><a class="btn-header" *ngIf="authService.isloggedIn" (click)="onLogout()">Deconnexion</a></li>

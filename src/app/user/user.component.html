@@ -8,3 +8,10 @@
     <p>Tous les utilisateur:</p>
     <li *ngFor="let user of users">{{ user.firstName }} ({{ user.email }})</li>
 </ul>
+<div>
+    <h1>User dashboard</h1>
+    {{ userDashboards | json}} 
+    <ul>
+        <li *ngFor="let userDashboard of userDashboards">{{ userDashboard.username }}</li>
+    </ul>
+</div>
