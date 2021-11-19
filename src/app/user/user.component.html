@@ -1,6 +1,11 @@
 <h2 class="p-4 bg-warning mt-2 mb-5 rounded shadow">{{ title }}</h2>
 
 <div class="col p-3 shadow rounded">
+    <h6>Nombre de visite:</h6>
+    <p *ngFor="let nbOfVisit of nbOfVisits">{{ nbOfVisit.nbOfVisits }}</p>
+</div>
+
+<div class="col p-3 shadow rounded">
     <p>{{  users | json}}</p>
 </div>
 
@@ -8,10 +13,11 @@
     <p>Tous les utilisateur:</p>
     <li *ngFor="let user of users">{{ user.firstName }} ({{ user.email }})</li>
 </ul>
-<div>
+
+<!-- <div>
     <h1>User dashboard</h1>
     {{ userDashboards | json}} 
     <ul>
         <li *ngFor="let userDashboard of userDashboards">{{ userDashboard.username }}</li>
     </ul>
-</div>
+</div> -->
