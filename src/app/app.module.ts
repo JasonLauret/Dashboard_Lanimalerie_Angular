@@ -6,7 +6,6 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { StockComponent } from './stock/stock.component';
 import { OrderComponent } from './order/order.component';
 import { CardComponent } from './card/card.component';
 import { CardTwoComponent } from './card-two/card-two.component';
@@ -15,7 +14,6 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FourOhfourComponent } from './four-ohfour/four-ohfour.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ProductComponent } from './product/product.component';
-import { DataFromApiComponent } from './data-from-api/data-from-api.component';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
@@ -26,7 +24,6 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    StockComponent,
     OrderComponent,
     CardComponent,
     CardTwoComponent,
@@ -35,7 +32,6 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
     FourOhfourComponent,
     HomePageComponent,
     ProductComponent,
-    DataFromApiComponent,
     UserComponent,
     LoginComponent,
     ForbiddenComponent

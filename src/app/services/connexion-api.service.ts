@@ -30,5 +30,9 @@ export class ConnexionApiService {
   getUserDashboard(): Observable<any> {
     return this.httpClient.get<any>( this.apiUrl + '/api/user_dashboards');
   }
+
+  getStatistical(): Observable<any> {
+    return this.httpClient.get<any>( this.apiUrl + '/api/statisticals');
+  }
   
 }

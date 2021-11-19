@@ -11,8 +11,15 @@
 </div>
 
 <div class="col p-3 shadow rounded">
-    <p>Valeur d'un panier moyen</p>
+    <p>Valeur d'un panier moyen:</p>
     <p> {{ averageBasket() | number : '1.2-2' }} €</p> 
 </div>
 
-<!-- <p>{{ countTotalSalesMoyen() | json}}</p> -->
+<div class="col p-3 shadow rounded">
+    <p>Panier abandonné: (en %)</p>
+    <p *ngFor="let number of abandonedCart">
+        {{ ((( number.abandonedCart / numberOfOrders.length)*100) ) | number : '1.2-2' }} %
+    </p>
+</div>
+
+

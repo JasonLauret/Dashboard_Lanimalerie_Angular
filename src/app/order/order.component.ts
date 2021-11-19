@@ -12,9 +12,12 @@ export class OrderComponent implements OnInit {
   title:string = "Bienvenue sur la page commande";
 
   connexion = this.connexionApi.getOrders();
+  connexionStat = this.connexionApi.getStatistical();
+  
 
   numberOfOrders:any;
   totalSales:any;
+  abandonedCart:any;
 
 
   constructor(private connexionApi:ConnexionApiService) { }
@@ -22,6 +25,7 @@ export class OrderComponent implements OnInit {
   ngOnInit(): void {
     this.connexion.subscribe(data =>{this.numberOfOrders = data['hydra:member']});
     this.connexion.subscribe(data =>{this.totalSales = data['hydra:member']});
+    this.connexionStat.subscribe(data =>{this.abandonedCart = data['hydra:member']});
   }
 
   /*
@@ -45,3 +49,5 @@ export class OrderComponent implements OnInit {
     return total;
   }
 } 
+
+
