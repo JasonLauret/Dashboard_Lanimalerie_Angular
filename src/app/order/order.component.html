@@ -1,24 +1,31 @@
 <h2 class="p-4 bg-warning mt-2 mb-5 rounded shadow">{{ title }}</h2>
 
 <div class="col p-3 shadow rounded">
-    <p>Nombre de commande:</p>
+    <h6>Nombre de commande:</h6>
     <p>{{ numberOfOrders.length }}</p>
 </div>
 
 <div class="col p-3 shadow rounded">
-    <p>Montant total des ventes:</p>
+    <h6>Montant total des ventes:</h6>
     <p>{{ countTotalSales() | number : '1.2-2' }} € </p>
 </div>
 
 <div class="col p-3 shadow rounded">
-    <p>Valeur d'un panier moyen:</p>
+    <h6>Valeur d'un panier moyen:</h6>
     <p> {{ averageBasket() | number : '1.2-2' }} €</p> 
 </div>
 
 <div class="col p-3 shadow rounded">
-    <p>Panier abandonné: (en %)</p>
-    <p *ngFor="let number of abandonedCart">
-        {{ ((( number.abandonedCart / numberOfOrders.length)*100) ) | number : '1.2-2' }} %
+    <h6>Panier abandonné: (en %)</h6>
+    <p *ngFor="let number of statistical">
+        {{ (( number.abandonedCart / numberOfOrders.length)*100) | number : '1.2-2' }} %
+    </p>
+</div>
+
+<div class="col p-3 shadow rounded">
+    <h6>Taux de conversion  en commande: (en %) calul a revoir</h6>
+    <p *ngFor="let nbOfCart of statistical">
+        {{ (( numberOfOrders.length / nbOfCart.nbOfCartCreated )*100) | number : '1.2-2' }} %
     </p>
 </div>
 

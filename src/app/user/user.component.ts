@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
 import { ConnexionApiService } from '../services/connexion-api.service';
 
 @Component({
@@ -9,17 +8,19 @@ import { ConnexionApiService } from '../services/connexion-api.service';
 })
 export class UserComponent implements OnInit {
   title:string = "Bienvenue sur la page des utilisateurs";
-  nbOfVisits:any;
-  users:any;
+  statistical:any;
+  test:any;
   userDashboards:any;
+  
 
   constructor(private connexionApi: ConnexionApiService) { }
 
   ngOnInit(): void {
-    this.connexionApi.getStatistical().subscribe(data => {this.nbOfVisits = data['hydra:member']});
-    this.connexionApi.getUsers().subscribe(data => {this.users = data['hydra:member']});
-    this.connexionApi.getUserDashboard().subscribe(data => {this.userDashboards = data['hydra:member']});
+    this.connexionApi.getStatistical().subscribe(data => {this.statistical = data['hydra:member']});
+    this.connexionApi.getUsers().subscribe(data => {this.test = data['hydra:member']});
   }
+
+
 
 
 

@@ -2,22 +2,26 @@
 
 <div class="col p-3 shadow rounded">
     <h6>Nombre de visite:</h6>
-    <p *ngFor="let nbOfVisit of nbOfVisits">{{ nbOfVisit.nbOfVisits }}</p>
+    <p *ngFor="let nbOfVisit of statistical">{{ nbOfVisit.nbOfVisits }}</p>
 </div>
 
 <div class="col p-3 shadow rounded">
-    <p>{{  users | json}}</p>
+    <h6>Nombre de panier:</h6>
+    <p *ngFor="let nbOfCart of statistical">{{ nbOfCart.nbOfCartCreated }}</p>
+</div>
+
+<div class="col p-3 shadow rounded">
+    <h6>Taux de conversion  en panier: (en %)</h6>
+    <p *ngFor="let convertedToCart of statistical">{{ ((convertedToCart.nbOfCartCreated / convertedToCart.nbOfVisits)*100) | number : '1.2-2'}}</p>
+</div>
+
+<h1 class="mt-5">Test</h1>
+
+<div class="col p-3 shadow rounded">
+    <p>{{  test | json}}</p>
 </div>
 
 <ul>
     <p>Tous les utilisateur:</p>
-    <li *ngFor="let user of users">{{ user.firstName }} ({{ user.email }})</li>
+    <li *ngFor="let user of test">{{ user.firstName }} ({{ user.email }})</li>
 </ul>
-
-<!-- <div>
-    <h1>User dashboard</h1>
-    {{ userDashboards | json}} 
-    <ul>
-        <li *ngFor="let userDashboard of userDashboards">{{ userDashboard.username }}</li>
-    </ul>
-</div> -->
