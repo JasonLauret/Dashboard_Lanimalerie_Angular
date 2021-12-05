@@ -15,20 +15,23 @@ export class ProductComponent implements OnInit {
   constructor(private connexionApi:ConnexionApiService) { }
 
   ngOnInit(): void {
-    this.connexionApi.getProduct().subscribe(data =>{this.totalProductsSold = data['hydra:member']});
-    this.connexionApi.getOrderProduct().subscribe(data =>{this.responses = data['hydra:member']});
+    this.connexionApi.getOrderProduct().subscribe(data =>{this.totalProductsSold = data['hydra:member']});
+    this.connexionApi.getProduct().subscribe(data =>{this.responses = data['hydra:member']});
   }
 
-  /*
-  * // Parcourir un tableau et compter l'occurence de chaque élément
+   /*
+  * Pour l'énoncer "Total de produits vendus triés par ordre décroissant(Le produit le plus vendu sera en
+  * tête de liste, afficher le nombre d’unités vendues pour chaque produit)" 
+  * Parcourir un tableau et compter l'occurence de chaque élément (Ne marche pas)
   */
-  countOccurences() {
+   countOccurences() {
     var occurrences:any = { };
-    for (var i = 0, j = this.responses.length; i < j; i++) {
-      occurrences[this.responses[i]] = (occurrences[this.responses[i]] || 0) + 1;
+    for (var i = 0, j = this.totalProductsSold.length; i < j; i++) {
+      occurrences[this.totalProductsSold[i]] = (occurrences[this.totalProductsSold[i]] || 0) + 1;
     }
     console.log(occurrences);
     return occurrences;
   }
   
 }
+

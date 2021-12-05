@@ -1,6 +1,13 @@
 <h2 class="p-4 bg-warning mt-2 mb-5 rounded shadow">{{ title }}</h2>
+
+<div class="col p-3 shadow rounded">
+    <h6>Total de produits vendus:</h6>
+    <p>{{ totalProductsSold.length }}</p>
+</div>
+
 <ul class="border">
     <p class="border">Occurrence des produits vendu:</p>
-    <li *ngFor="let response of responses">{{ response.product.name }}</li>
+    <li *ngFor="let response of totalProductsSold">{{ response.product.name }}</li>
 </ul>
 
+<p>{{ countOccurences() | json}}</p>

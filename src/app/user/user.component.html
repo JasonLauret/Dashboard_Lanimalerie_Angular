@@ -11,7 +11,7 @@
 </div>
 
 <div class="col p-3 shadow rounded">
-    <h6>Taux de conversion  en panier: (en %)</h6>
+    <h6>Taux de conversion  en panier:</h6>
     <p *ngFor="let convertedToCart of statistical">{{ ((convertedToCart.nbOfCartCreated / convertedToCart.nbOfVisits)*100) | number : '1.2-2'}}</p>
 </div>
 

@@ -18,8 +18,8 @@ export class OrderComponent implements OnInit {
   constructor(private connexionApi:ConnexionApiService) { }
 
   ngOnInit(): void {
-    this.connexionApi.getStatistical().subscribe(data => {this.statistical = data['hydra:member']});
     this.connexionApi.getOrders().subscribe(data =>{this.numberOfOrders = data['hydra:member']});
+    this.connexionApi.getStatistical().subscribe(data => {this.statistical = data['hydra:member']});
     this.connexionApi.getOrders().subscribe(data =>{this.totalSales = data['hydra:member']});
   }
 

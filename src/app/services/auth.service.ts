@@ -14,17 +14,17 @@ export class AuthService {
     {"username":"jason", "password":"azerty"}
   ]
 
-  apiURL = "http://127.0.0.1:8000/api/user_dashboards?page=1";
+  //apiURL = "http://127.0.0.1:8000/api/user_dashboards?page=1";
 
   public loggedUser:any;
   public isloggedIn: Boolean = false;
 
   constructor(private httpClient: HttpClient, private router:Router) { }
 
-  getUserFromBdd(username:string):Observable<User>{
-    const url = `${this.apiURL}/${username}`;
-    return this.httpClient.get<User>(url);
-  }
+  // getUserFromBdd(username:string):Observable<User>{
+  //   const url = `${this.apiURL}/${username}`;
+  //   return this.httpClient.get<User>(url);
+  // }
   
   // signIn(user:User){
   //   this.loggedUser = user.username;
